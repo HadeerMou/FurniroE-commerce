@@ -35,10 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased  min-h-screen`}
       >
         <Header />
-        <main className=" mx-auto min-h-screen">{children}</main>
+        <main className="mx-auto flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
