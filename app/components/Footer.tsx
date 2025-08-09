@@ -37,13 +37,13 @@ const Footer = () => {
           <p className="text-[16px] text-[rgba(159,159,159,1)] mb-[55px]">
             Newsletter
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center text-[14px] gap-2">
             <input
-              className="border-b border-[rgba(0,0,0,1)] text-[rgba(159,159,159,1)] text-[14px] pe-5"
+              className="border-b border-[rgba(0,0,0,1)] text-[rgba(159,159,159,1)] pe-5"
               type="email"
               placeholder="Enter Your Email Address"
             />
-            <button className="uppercase border-b border-[rgba(0,0,0,1)]">
+            <button className="uppercase border-b border-[rgba(0,0,0,1)] font-medium">
               Subscribe
             </button>
           </div>

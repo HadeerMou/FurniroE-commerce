@@ -6,7 +6,11 @@ const Header = () => {
   return (
     <header className="bg-white shadow px-[77px] flex justify-between items-center h-[100px]">
       <div className="flex items-center">
-        <img className="w-[50px] h-[32px]" src="/logo.png" alt="Furniro Logo" />
+        <img
+          className="w-[50px] h-[32px] object-cover"
+          src="/logo.png"
+          alt="Furniro Logo"
+        />
         <h2 className="text-[34px] font-bold [font-family:var(--font-montserrat)]">
           Furniro
         </h2>
