@@ -3,27 +3,13 @@ import Image from "next/image";
 import React from "react";
 import { X } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import { useRouter } from "next/navigation";
 
 const Cart = () => {
-  const { isCartVisible, toggleCartVisibility } = useCart();
+  const router = useRouter();
+  const { isCartVisible, toggleCartVisibility, cartItems } = useCart();
   if (!isCartVisible) return null;
 
-  const cartItems = [
-    {
-      id: 1,
-      name: "Asgaard sofa",
-      img: "/cart/asgaard sofa.png",
-      price: "250,000.00",
-      quantity: "1",
-    },
-    {
-      id: 2,
-      name: "Casaliving Wood",
-      img: "/cart/casaliving wood.png",
-      price: "270,000.00",
-      quantity: "1",
-    },
-  ];
   const subtotal = cartItems.reduce(
     (acc, item) =>
       acc + parseFloat(item.price.replace(/,/g, "")) * parseInt(item.quantity),
@@ -106,13 +92,19 @@ const Cart = () => {
           </div>
           <hr className="border border-[rgba(217,217,217,1)] w-full mb-3" />
           <div className="flex items-center justify-between gap-2 text-[12px]">
-            <button className="w-[87px] h-[30px] rounded-[50px] border border-[rgba(0,0,0,1)]">
+            <button
+              onClick={() => {
+                router.push("/cart");
+                toggleCartVisibility();
+              }}
+              className="w-[87px] h-[30px] rounded-[50px] border border-[rgba(0,0,0,1)] cursor-pointer"
+            >
               Cart
             </button>
-            <button className="w-[118px] h-[30px] rounded-[50px] border border-[rgba(0,0,0,1)]">
+            <button className="w-[118px] h-[30px] rounded-[50px] border border-[rgba(0,0,0,1)] cursor-pointer">
               Checkout
             </button>
-            <button className="w-[135px] h-[30px] rounded-[50px] border border-[rgba(0,0,0,1)]">
+            <button className="w-[135px] h-[30px] rounded-[50px] border border-[rgba(0,0,0,1)] cursor-pointer">
               Comparison
             </button>
           </div>
