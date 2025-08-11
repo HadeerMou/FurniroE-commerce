@@ -10,7 +10,7 @@ const Header = () => {
   const { toggleCartVisibility } = useCart();
 
   return (
-    <header className="bg-white shadow px-5 md:px-[77px] flex justify-between items-center h-[60px] md:h-[100px]">
+    <header className="shadow px-5 md:px-[77px] flex justify-between items-center h-[60px] md:h-[100px]">
       <div className="flex items-center">
         <Image
           className="w-[50px] h-[32px] object-cover"
