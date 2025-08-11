@@ -129,7 +129,7 @@ const Shop = () => {
       <ProductList products={allProducts} />
       <section className="grid grid-cols-2 md:grid-cols-4 md:justify-items-center px-2 gap-x-2 items-center bg-[rgba(249,241,231,1)] h-[150px] md:h-[270px] w-full">
         {offer.map((o) => (
-          <div className="flex items-center gap-2 md:gap-4">
+          <div key={o.id} className="flex items-center gap-2 md:gap-4">
             <Image
               className="w-[18px] h-[18px] sm:w-[28px] sm:h-[28px] md:w-[50px] md:h-[50px]"
               src={o.img}

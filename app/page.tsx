@@ -15,8 +15,6 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollAmount = 400; // adjust based on image width + margin
-
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
