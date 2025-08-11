@@ -2,9 +2,10 @@
 import { ArrowLeft, Bold, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { text } from "stream/consumers";
+import HomeProducts from "./components/HomeProducts";
 
 const images = [
   { id: 1, src: "/Image.png", text: "Bed Room" },
@@ -33,29 +34,76 @@ export default function Home() {
       scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     }
   };
+  type ImgData = {
+    src: string;
+    w: number;
+    h: number;
+    fit: "cover" | "fill";
+    top: number;
+    left: number | string;
+    centerX?: boolean;
+  };
+
+  const imagesData: ImgData[] = [
+    { src: "/img1.png", w: 274, h: 382, top: 0, left: 0, fit: "cover" },
+    { src: "/img2.png", w: 451, h: 312, top: 70, left: 290, fit: "cover" },
+    { src: "/img3.png", w: 381, h: 323, top: 400, left: 0, fit: "cover" },
+    { src: "/img4.png", w: 344, h: 242, top: 400, left: 397, fit: "fill" },
+    { src: "/img5.png", w: 290, h: 348, top: 100, left: 1068, fit: "cover" },
+    { src: "/img6.png", w: 425, h: 433, top: 15, left: 1374, fit: "fill" },
+    { src: "/img7.png", w: 178, h: 242, top: 463, left: 1068, fit: "fill" },
+    { src: "/img8.png", w: 258, h: 196, top: 463, left: 1262, fit: "fill" },
+    {
+      src: "/img9.png",
+      w: 295,
+      h: 392,
+      top: 156,
+      left: "50%",
+      fit: "cover",
+      centerX: true,
+    },
+  ];
 
   return (
     <>
-      <div className="relative w-full h-[716.83px]">
-        <Image
-          src="/Mask Group.jpg"
-          alt="Mask Group"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
-      <section className="w-[1183px] h-[685px] mx-auto my-[127.53px] flex flex-col gap-y-[62px]">
-        <div className="flex flex-col w-[559px] h-[76.71px] text-center justify-center mx-auto">
-          <h3 className="text-[32px] font-bold text-[rgba(51,51,51,1)]">
+      <section>
+        <div className="relative w-full h-[500px] sm:h-[600px] md:h-[717px]">
+          <Image
+            src="/HomeWidget.png"
+            alt="Mask Group"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute flex flex-col p-[40px_20px] sm:p-[50px_30px] md:p-[62px_43px_37px_39px] w-[90%] max-w-[643px] top-[15%] sm:top-[18%] md:top-[21.95%] left-1/2 sm:left-[48%] md:left-[51.32%] h-auto md:h-[443px] -translate-x-1/2 sm:-translate-x-[40%] md:translate-x-0 bg-[rgba(255,243,227,1)] rounded-[10px]">
+            <p className="mb-[4px] text-[14px] sm:text-[15px] md:text-[16px] text-[rgba(51,51,51,1)] leading-[100%] tracking-[3px]">
+              New Arrival
+            </p>
+
+            <h2 className="text-[28px] sm:text-[40px] md:text-[53px] mb-[17px] font-bold text-[rgba(184,142,47,1)] leading-[1.1] md:leading-[65px] w-full md:w-[559px]">
+              Discover Our New Collection
+            </h2>
+            <p className="text-[14px] sm:text-[16px] md:text-[18px] mb-[46px] text-[rgba(51,51,51,1)] leading-[20px] md:leading-[24px] w-full md:w-[546px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis.
+            </p>
+            <button className="btn sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl bg-[rgba(184,142,47,1)] text-[14px] sm:text-[15px] md:text-[16px] text-[rgba(255,255,255,1)] leading-[100%] uppercase lg:w-[222px] lg:h-[74px] opacity-100 relative gap-[10px]">
+              Buy now
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="md:w-[1183px] md:h-[685px] mx-auto my-8 md:my-[127.53px] flex flex-col md:gap-y-[62px]">
+        <div className="flex flex-col w-[300px] md:w-[559px] h-[76.71px] text-center justify-center mx-auto">
+          <h3 className="text-2xl md:text-[32px] font-bold text-[rgba(51,51,51,1)]">
             Browse The Range
           </h3>
-          <p className="text-[20px] text-[rgba(102,102,102,1)]">
+          <p className="text-sm sm:text-base md:text-[20px] text-[rgba(102,102,102,1)]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div className="flex gap-[20px]">
-          <div className="flex flex-col items-center gap-[30px]">
+        <div className="flex gap-3 md:gap-[20px]">
+          <div className="flex flex-col items-center gap-3 md:gap-[30px]">
             <Image
               src="/dinning.png"
               alt=""
@@ -65,7 +113,7 @@ export default function Home() {
             />
             <p>Dinning</p>
           </div>
-          <div className="flex flex-col items-center gap-[30px]">
+          <div className="flex flex-col items-center gap-3 md:gap-[30px]">
             <Image
               src="/living.png"
               alt=""
@@ -75,7 +123,7 @@ export default function Home() {
             />
             <p>Living</p>
           </div>
-          <div className="flex flex-col items-center gap-[30px]">
+          <div className="flex flex-col items-center gap-3 md:gap-[30px]">
             <Image
               src="/bedroom.png"
               alt=""
@@ -87,22 +135,23 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-[670px] w-full bg-[rgba(252,248,243,1)] flex overflow-hidden">
-        <div className="flex flex-col ml-[100px] my-auto">
-          <div className="w-[422px] h-[151px]">
-            <h3 className="text-[24px] font-bold text-[rgba(51,51,51,1)]">
-              Explore Our Designs
+      <HomeProducts />
+      <section className="h-[670px] w-full bg-[rgba(252,248,243,1)] flex flex-col lg:flex-row overflow-hidden">
+        <div className="flex flex-col my-8 ml-6 md:ml-[100px] md:my-auto md:me-20 md:gap-[25px]">
+          <div className="w-[280px] mb-5 md:mb-0 md:w-[422px] md:h-[151px]">
+            <h3 className="text-xl md:text-[40px] font-bold text-[rgba(51,51,51,1)]">
+              50+ Beautiful rooms inspiration
             </h3>
-            <p className="text-[16px] font-medium text-[rgba(97,97,97,1)]">
+            <p className="text-xs md:text-[16px] font-medium text-[rgba(97,97,97,1)]">
               Our designer already made a lot of beautiful prototipe of rooms
               that inspire you
             </p>
           </div>
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl bg-[rgba(184,142,47,1)] text-[16px] text-[rgba(255,255,255,1)] lg:w-[176px] lg:h-[48px]">
+          <button className="btn sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl bg-[rgba(184,142,47,1)] md:text-[16px] text-[rgba(255,255,255,1)] w-[176px] lg:h-[48px]">
             Explore More
           </button>
         </div>
-        <div className="relative h-[582px] w-[404px] mt-[44px] flex-shrink-0 me-[24px] ">
+        <div className="relative h-[400px] w-[300px] md:h-[582px] md:w-[404px] mt-[20px] mx-auto md:mx-0 md:mt-[44px] flex-shrink-0 md:me-[24px] ">
           <Image
             src={images[currentIndex].src}
             alt={`Image ${currentIndex + 1}`}
@@ -110,27 +159,60 @@ export default function Home() {
             className="transition-opacity duration-500"
             priority
           />
-          <div
-            className="absolute flex items-end"
-            style={{
-              top: `${3235 - 2807}px`,
-              left: `${588 - 564}px`,
-            }}
-          >
-            <div className="flex flex-col gap-2 justify-center items-center w-[217px] h-[130px] top-0 left-0 p-4 bg-[rgba(255,255,255,0.72)] backdrop-blur-sm">
-              <p className="flex items-center gap-2 text-[16px] font-medium text-[rgba(97,97,97,1)] leading-[1.5]">
+          <div className="absolute flex items-end top-[260px] left-4 sm:top-[350px] sm:left-5 lg:top-[428px] lg:left-6">
+            <div className="flex flex-col gap-2 justify-center items-center w-[160px] h-[100px] md:w-[217px] md:h-[130px] top-0 left-0 p-4 bg-[rgba(255,255,255,0.72)] backdrop-blur-sm">
+              <p className="flex items-center justify-center gap-1 text-xs md:text-[16px] font-medium text-[rgba(97,97,97,1)] leading-[1.5]">
                 0{images[currentIndex].id}
-                <Image src="/Vector 1.svg" alt="" width={27} height={1} />
+                <span className="relative w-[27px] h-[1px] md:w-[35px] md:h-[2px]">
+                  <Image
+                    src="/Vector 1.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
+                </span>
                 <span>{images[currentIndex].text}</span>
               </p>
-              <h3 className="text-[28px] leading-[1.2]">Inner Peace</h3>
+              <h3 className="text-lg md:text-[28px] leading-[1.2]">
+                Inner Peace
+              </h3>
             </div>
-            <div className="w-[48px] h-[48px] bg-[rgba(184,142,47,1)] flex justify-center items-center">
-              <Image src="/Vector 2.svg" alt="" width={18} height={12} />
+            <div className="w-[35px] h-[35px] md:w-[48px] md:h-[48px] bg-[rgba(184,142,47,1)] flex justify-center items-center">
+              <div className="relative w-[18px] h-[12px] sm:w-[22px] sm:h-[15px] lg:w-[18px] lg:h-[12px]">
+                <Image
+                  src="/Vector 2.svg"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
+          {/* Mobile arrows (hidden on desktop) */}
+          <div className="absolute inset-0 flex justify-between items-center px-4 lg:hidden">
+            <button
+              onClick={() =>
+                setCurrentIndex(
+                  currentIndex === 0 ? images.length - 1 : currentIndex - 1
+                )
+              }
+              className="w-[40px] h-[40px] bg-white/70 rounded-full flex items-center justify-center shadow-md"
+            >
+              <ChevronLeft className="text-[rgba(184,142,47,1)]" size={20} />
+            </button>
+            <button
+              onClick={() =>
+                setCurrentIndex(
+                  currentIndex === images.length - 1 ? 0 : currentIndex + 1
+                )
+              }
+              className="w-[40px] h-[40px] bg-white/70 rounded-full flex items-center justify-center shadow-md"
+            >
+              <ChevronRight className="text-[rgba(184,142,47,1)]" size={20} />
+            </button>
+          </div>
         </div>
-        <div className="relative flex-grow ml-8 flex flex-col mt-[44px]">
+        <div className="relative flex-grow ml-8 hidden lg:flex flex-col mt-[44px]">
           {/* Scrollable container */}
           <div
             ref={scrollRef}
@@ -152,7 +234,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {/* Arrows */}
+          {/* Desktop arrow */}
           <div className="absolute flex top-50 left-83 h-full w-full justify-between px-4">
             <button
               onClick={nextImage}
@@ -162,7 +244,7 @@ export default function Home() {
               <ChevronRight className="text-[rgba(184,142,47,1)]" size={24} />
             </button>
           </div>
-          {/* Dots vertical */}
+          {/* Desktop Dots vertical */}
           <div
             className="flex mt-[40px] items-center justify-center gap-[20px]"
             style={{ width: 120, height: 27 }}
@@ -190,88 +272,53 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full my-[50px] relative overflow-hidden">
-        <div className="flex flex-col items-center justify-center text-center h-[86px] w-[356px] ml-[525px]">
-          <p className="text-[20px] font-medium text-[rgba(97,97,97,1)] leading-[1.5]">
+        <div className="flex flex-col items-center justify-center text-center lg:h-[86px] lg:w-[356px] lg:ml-[525px]">
+          <p className="md:text-[20px] font-medium text-[rgba(97,97,97,1)] leading-[1.5]">
             Share your setup with
           </p>
-          <h2 className="text-[40px] font-bold text-[rgba(58,58,58,1)] leading-[1.2]">
+          <h2 className="md:text-[40px] font-bold text-[rgba(58,58,58,1)] leading-[1.2]">
             #FuniroFurniture
           </h2>
         </div>
-        <div className="w-full h-[721px] relative mt-[9px]">
+
+        <div className="w-full h-[721px] relative mt-[20px] lg:mt-[9px]">
+          {/* Mobile & Tablet Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 px-4 lg:hidden">
+            {imagesData.map((img, idx) => (
+              <div
+                key={idx}
+                className="relative w-full"
+                style={{ aspectRatio: `${img.w} / ${img.h}` }}
+              >
+                <Image
+                  src={img.src}
+                  alt={`Image ${idx + 1}`}
+                  fill
+                  className="object-cover rounded-md"
+                />
+              </div>
+            ))}
+          </div>
           <div className="absolute h-[721px] overflow-hidden left-1/2 top-0 -translate-x-1/2 w-[1799px] ">
-            <Image
-              className="absolute top-[0px] bottom-0 left-[0px]"
-              style={{ width: "274px", height: "382px", objectFit: "cover" }}
-              src="/img1.png"
-              alt="Image 1"
-              width={274}
-              height={382}
-            />
-            <Image
-              className="absolute top-[70px] bottom-0 left-[290px]"
-              style={{ width: "451px", height: "312px", objectFit: "cover" }}
-              src="/img2.png"
-              alt="Image 2"
-              width={451}
-              height={312}
-            />
-            <Image
-              className="absolute top-[400px] left-[0px]"
-              style={{ width: "381px", height: "323px", objectFit: "cover" }}
-              src="/img3.png"
-              alt="Image 3"
-              width={381}
-              height={323}
-            />
-            <Image
-              className="absolute top-[400px] left-[397px]"
-              style={{ width: "344px", height: "242px", objectFit: "fill" }}
-              src="/img4.png"
-              alt="Image 4"
-              width={344}
-              height={242}
-            />
-            <Image
-              className="absolute top-[100px] left-[1068px]"
-              style={{ width: "290px", height: "348px", objectFit: "cover" }}
-              src="/img5.png"
-              alt="Image 5"
-              width={290}
-              height={348}
-            />
-            <Image
-              className="absolute top-[15px] left-[1374px]"
-              style={{ width: "425px", height: "433px", objectFit: "fill" }}
-              src="/img6.png"
-              alt="Image 6"
-              width={425}
-              height={433}
-            />
-            <Image
-              className="absolute top-[463px] left-[1068px]"
-              style={{ width: "178px", height: "242px", objectFit: "fill" }}
-              src="/img7.png"
-              alt="Image 7"
-              width={178}
-              height={242}
-            />
-            <Image
-              className="absolute top-[463px] left-[1262px]"
-              style={{ width: "258px", height: "196px", objectFit: "fill" }}
-              src="/img8.png"
-              alt="Image 8"
-              width={258}
-              height={196}
-            />
-            <Image
-              className="absolute top-[156px] left-1/2 -translate-x-1/2"
-              style={{ width: "295px", height: "392px", objectFit: "cover" }}
-              src="/img9.png"
-              alt="Image 9"
-              width={295}
-              height={392}
-            />
+            {imagesData.map((img, idx) => (
+              <Image
+                key={idx}
+                className="absolute"
+                style={{
+                  width: `${img.w}px`,
+                  height: `${img.h}px`,
+                  objectFit: img.fit,
+                  top: `${img.top}px`,
+                  left:
+                    typeof img.left === "number" ? `${img.left}px` : img.left,
+                  transform: img.centerX ? "translateX(-50%)" : undefined,
+                }}
+                src={img.src}
+                alt={`Image ${idx + 1}`}
+                width={img.w}
+                height={img.h}
+              />
+            ))}
           </div>
         </div>
       </section>

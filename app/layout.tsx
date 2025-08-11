@@ -3,6 +3,8 @@ import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { CartProvider } from "./context/CartContext";
+import Cart from "./components/Cart";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -37,9 +39,12 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${poppins.variable} antialiased  min-h-screen`}
       >
-        <Header />
-        <main className="mx-auto flex-grow">{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <Cart />
+          <main className="mx-auto flex-grow">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Syltherine",
+    "description": "Stylish cafe chair",
+    "price": 3500000,
+    "discount": 28.57,
+    "image": "/products/image 1.png"
+  },
+  {
+    "id": 2,
+    "name": "Leviosa",
+    "description": "Stylish cafe chair",
+    "price": 2500000,
+    "discount": 0,
+    "image": "/products/image 2.png"
+  },
+  {
+    "id": 3,
+    "name": "Lolito",
+    "description": "Luxury big sofa",
+    "price": 14000000,
+    "discount": 50,
+    "image": "/products/image 3.png"
+  },
+  {
+    "id": 4,
+    "name": "Respira",
+    "description": "outdoor bar table and stool",
+    "price": 500000,
+    "discount": 0,
+    "image": "/products/image 4.png"
+  },
+  {
+    "id": 5,
+    "name": "Grifo",
+    "description": "Night lamp",
+    "price": 1500000,
+    "discount": 0,
+    "image": "/products/image 5.png"
+  },
+  {
+    "id": 6,
+    "name": "Muggo",
+    "description": "small mug",
+    "price": 150000,
+    "discount": 0,
+    "image": "/products/image 6.png"
+  },
+  {
+    "id": 7,
+    "name": "Pingky",
+    "description": "Cute bed set",
+    "price": 14000000,
+    "discount": 50,
+    "image": "/products/image 7.png"
+  },
+  {
+    "id": 8,
+    "name": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "discount": 0,
+    "image": "/products/image 8.png"
+  },
+  {
+    "id": 9,
+    "name": "Grifo",
+    "description": "Night lamp",
+    "price": 1500000,
+    "discount": 0,
+    "image": "/products/image 5.png"
+  },
+  {
+    "id": 10,
+    "name": "Muggo",
+    "description": "small mug",
+    "price": 150000,
+    "discount": 0,
+    "image": "/products/image 6.png"
+  },
+  {
+    "id": 11,
+    "name": "Pingky",
+    "description": "Cute bed set",
+    "price": 14000000,
+    "discount": 50,
+    "image": "/products/image 7.png"
+  },
+  {
+    "id": 12,
+    "name": "Potty",
+    "description": "Minimalist flower pot",
+    "price": 500000,
+    "discount": 0,
+    "image": "/products/image 8.png"
+  }
+]
