@@ -1,10 +1,8 @@
 "use client";
-import { ArrowLeft, Bold, ChevronLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
-import { text } from "stream/consumers";
 import HomeProducts from "./components/HomeProducts";
 
 const images = [
@@ -23,17 +21,6 @@ export default function Home() {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
-  const scrollNext = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const scrollPrev = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
-  };
   type ImgData = {
     src: string;
     w: number;

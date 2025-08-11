@@ -4,6 +4,7 @@ import React from "react";
 import { Search } from "lucide-react";
 import HeaderMenu from "./HeaderMenu";
 import { useCart } from "../context/CartContext";
+import Image from "next/image";
 
 const Header = () => {
   const { toggleCartVisibility } = useCart();
@@ -11,10 +12,12 @@ const Header = () => {
   return (
     <header className="bg-white shadow px-5 md:px-[77px] flex justify-between items-center h-[60px] md:h-[100px]">
       <div className="flex items-center">
-        <img
+        <Image
           className="w-[50px] h-[32px] object-cover"
           src="/logo.png"
           alt="Furniro Logo"
+          width={50}
+          height={32}
         />
         <h2 className="text-[24px] sm:text-[28px] md:text-[34px] font-bold [font-family:var(--font-montserrat)]">
           Furniro
@@ -28,13 +31,20 @@ const Header = () => {
         <Link href="/contact">Contact</Link>
       </nav>
       {/* Desktop icons - visible md and up */}
-      <nav className="hidden md:flex items-center gap-[45px]">
-        <img src="/user.svg" alt="User Icon" />
-        <Search />
-        <img src="/akar-icons_heart.svg" alt="Heart Icon" />
-        <img
+      <nav className="hidden md:flex items-center gap-[38px]">
+        <Image src="/user.svg" alt="User Icon" width={23} height={23} />
+        <Search size={23} />
+        <Image
+          src="/akar-icons_heart.svg"
+          alt="Heart Icon"
+          width={23}
+          height={23}
+        />
+        <Image
           src="/cart.svg"
           alt="Cart Icon"
+          width={23}
+          height={23}
           className="cursor-pointer"
           onClick={toggleCartVisibility}
         />

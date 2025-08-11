@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -58,10 +59,12 @@ const ProductList: React.FC<ProductListProps> = ({
               className="w-[160px] h-[250px] md:w-[285px] md:h-[446px]"
               key={`${product.id}-${index}`}
             >
-              <img
+              <Image
                 className="w-full object-cover"
                 src={product.image}
                 alt={product.name}
+                width={160}
+                height={250}
               />
               <div className="flex flex-col bg-[rgba(244,245,247,1)] py-2 px-2 md:pt-4 md:pr-5 md:pb-7 md:pl-4 h-[90px] md:h-[145px]">
                 <h2 className="text-sm md:text-[24px] font-medium truncate">

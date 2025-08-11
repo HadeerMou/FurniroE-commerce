@@ -70,13 +70,13 @@ const Shop = () => {
         </div>
         <div className="flex flex-col items-center absolute top-20 left-1/2 -translate-x-1/2 md:translate-x-0 md:top-[221px] md:left-[658px] md:w-[124px] md:h-[72px] text-[rgba(0,0,0,1)] font-medium">
           <h2 className="text-[20px] md:text-[48px]">Shop</h2>
-          <p className="flex items-center md:gap-1 text-xs md:text-[16px]">
+          <div className="flex items-center md:gap-1 text-xs md:text-[16px]">
             Home{" "}
             <div className="w-4 h-4 md:w-5 md:h-5">
               <ChevronRight className="w-full h-full" />
             </div>{" "}
             Shop
-          </p>
+          </div>
         </div>
       </div>
       <section className="flex md:flex-row flex-col items-center justify-around bg-[rgba(249,241,231,1)] h-[100px] w-full">

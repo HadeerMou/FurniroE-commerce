@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const HeaderMenu = ({
   toggleCartVisibility,
@@ -38,14 +39,22 @@ const HeaderMenu = ({
           </Link>
           <hr className="border/10 w-80 border-gray-200" />
           <div className="flex items-center gap-6 my-4">
-            <img className="w-5 h-4" src="/user.svg" alt="User Icon" />
+            <Image
+              className="w-5 h-4"
+              src="/user.svg"
+              alt="User Icon"
+              width={5}
+              height={4}
+            />
             <Search className="w-6 h-5" />
-            <img
+            <Image
               className="w-6 h-5"
               src="/akar-icons_heart.svg"
               alt="Heart Icon"
+              width={6}
+              height={5}
             />
-            <img
+            <Image
               onClick={() => {
                 toggleCartVisibility();
                 setMenuOpen(false);
@@ -53,6 +62,8 @@ const HeaderMenu = ({
               className="w-5 h-4"
               src="/cart.svg"
               alt="Cart Icon"
+              width={5}
+              height={4}
             />
           </div>
         </nav>
