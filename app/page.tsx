@@ -60,7 +60,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute flex flex-col p-[40px_20px] sm:p-[50px_30px] md:p-[62px_43px_37px_39px] w-[90%] max-w-[643px] top-[15%] sm:top-[18%] md:top-[21.95%] left-1/2 sm:left-[48%] md:left-[51.32%] h-auto md:h-[443px] -translate-x-1/2 sm:-translate-x-[40%] md:translate-x-0 bg-[rgba(255,243,227,1)] rounded-[10px]">
+          <div className="absolute flex flex-col p-[40px_20px] sm:p-[50px_30px] md:p-[62px_43px_37px_39px] w-[80%] max-w-[643px] top-[15%] sm:top-[18%] md:top-[21.95%] left-1/2 sm:left-[48%] md:left-[51.32%] h-auto md:h-[443px] -translate-x-1/2 sm:-translate-x-[40%] md:translate-x-0 bg-[rgba(255,243,227,1)] rounded-[10px]">
             <p className="mb-[4px] text-[14px] sm:text-[15px] md:text-[16px] text-[rgba(51,51,51,1)] leading-[100%] tracking-[3px]">
               New Arrival
             </p>
@@ -78,8 +78,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="md:w-[1183px] md:h-[685px] mx-auto my-8 md:my-[127.53px] flex flex-col md:gap-y-[62px]">
-        <div className="flex flex-col w-[300px] md:w-[559px] h-[76.71px] text-center justify-center mx-auto">
+      <section className="md:w-[1183px] md:h-[685px] mx-auto my-8 md:my-[127.53px] px-2 flex flex-col gap-y-4 md:gap-y-[62px]">
+        <div className="flex flex-col md:w-[559px] h-[76.71px] text-center justify-center mx-auto">
           <h3 className="text-2xl md:text-[32px] font-bold text-[rgba(51,51,51,1)]">
             Browse The Range
           </h3>
