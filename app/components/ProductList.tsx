@@ -49,7 +49,7 @@ const ProductList: React.FC<ProductListProps> = ({
           Our Products
         </h2>
       )}
-      <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center px-4 md:px-8 gap-4 md:gap-10 mt-6 md:mt-10 mb-8 md:mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 justify-items-center px-4 md:px-27 pt-4 gap-4 md:gap-10 mt-6 md:mt-10 mb-8 md:mb-10">
         {displayedProducts.map((product, index) => {
           const discountedPrice =
             product.price * (1 - (product.discount ?? 0) / 100);
